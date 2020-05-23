@@ -17,7 +17,7 @@ public class OptimisetaskController implements OptimiseTaskApi {
     public  ResponseEntity<OptimseTask> addTask(@ApiParam(value = "Pet object that needs to be added to the store" ,required=true )  @Valid @RequestBody OptimseTask body) {
         System.out.println("-----------------");
         System.out.println(body);
-        body.setPceInstance(Integer.parseInt(body.getPceInstance()) + 1 + "");
+        body.setPceInstance(Integer.parseInt(body.getPceInstance()) + 100 + "");
         return new ResponseEntity<>(body,HttpStatus.OK);
     }
 }

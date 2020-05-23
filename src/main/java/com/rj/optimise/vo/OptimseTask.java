@@ -6,27 +6,34 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import lombok.Builder;
-
+import javax.validation.Valid;
+import javax.validation.constraints.*;
 
 /**
  * OptimseTask
  */
-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.SpringCodegen", date = "2020-05-21T23:34:58.667+08:00")
-@Builder
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2020-05-23T19:00:05.816+08:00")
+
 public class OptimseTask   {
+  @JsonProperty("requestKey")
   private String requestKey = null;
 
+  @JsonProperty("usrId")
   private String usrId = null;
 
+  @JsonProperty("taskId")
   private String taskId = null;
 
+  @JsonProperty("startTime")
   private Long startTime = null;
 
+  @JsonProperty("approvTime")
   private Long approvTime = null;
 
+  @JsonProperty("splice")
   private Integer splice = null;
 
+  @JsonProperty("pceInstance")
   private String pceInstance = null;
 
   /**
@@ -46,13 +53,26 @@ public class OptimseTask   {
     }
 
     @Override
+    @JsonValue
     public String toString() {
       return String.valueOf(value);
     }
+
+    @JsonCreator
+    public static StateEumEnum fromValue(String text) {
+      for (StateEumEnum b : StateEumEnum.values()) {
+        if (String.valueOf(b.value).equals(text)) {
+          return b;
+        }
+      }
+      return null;
+    }
   }
 
+  @JsonProperty("stateEum")
   private StateEumEnum stateEum = null;
 
+  @JsonProperty("downloadingProgress")
   private Integer downloadingProgress = null;
 
   public OptimseTask requestKey(String requestKey) {
@@ -65,6 +85,8 @@ public class OptimseTask   {
    * @return requestKey
   **/
   @ApiModelProperty(value = "")
+
+
   public String getRequestKey() {
     return requestKey;
   }
@@ -83,6 +105,8 @@ public class OptimseTask   {
    * @return usrId
   **/
   @ApiModelProperty(value = "")
+
+
   public String getUsrId() {
     return usrId;
   }
@@ -101,6 +125,8 @@ public class OptimseTask   {
    * @return taskId
   **/
   @ApiModelProperty(value = "")
+
+
   public String getTaskId() {
     return taskId;
   }
@@ -119,6 +145,8 @@ public class OptimseTask   {
    * @return startTime
   **/
   @ApiModelProperty(value = "")
+
+
   public Long getStartTime() {
     return startTime;
   }
@@ -137,6 +165,8 @@ public class OptimseTask   {
    * @return approvTime
   **/
   @ApiModelProperty(value = "")
+
+
   public Long getApprovTime() {
     return approvTime;
   }
@@ -155,6 +185,8 @@ public class OptimseTask   {
    * @return splice
   **/
   @ApiModelProperty(value = "")
+
+
   public Integer getSplice() {
     return splice;
   }
@@ -173,6 +205,8 @@ public class OptimseTask   {
    * @return pceInstance
   **/
   @ApiModelProperty(value = "")
+
+
   public String getPceInstance() {
     return pceInstance;
   }
@@ -191,6 +225,8 @@ public class OptimseTask   {
    * @return stateEum
   **/
   @ApiModelProperty(value = "")
+
+
   public StateEumEnum getStateEum() {
     return stateEum;
   }
@@ -209,6 +245,8 @@ public class OptimseTask   {
    * @return downloadingProgress
   **/
   @ApiModelProperty(value = "")
+
+
   public Integer getDownloadingProgress() {
     return downloadingProgress;
   }

@@ -1,1 +1,0 @@
-java -jar swagger-codegen-cli-2.2.1.jar generate -i ./optimise.yaml -l spring  -o ../ --api-package com.rj.optimise.api  --invoker-package com.rj.optimise.invoker --model-package com.rj.optimise.vo  -Dlibrary=spring-boot -DinterfaceOnly=true

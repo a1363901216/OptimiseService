@@ -36,6 +36,8 @@ paths:
       responses:
         "200":
           description: "ok"
+          schema:
+            $ref: "#/definitions/OptimseTask"
         "500":
           description: "Invalid input"
 
